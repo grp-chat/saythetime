@@ -45,7 +45,7 @@ requestWakeLock();
 function convertToAMPM(time) {
     const [h, m] = time.split(':').map(n => parseInt(n));
     const hour = HOURS[h % 12];
-    const suffix = (h < 12) ? 'AM' : 'PM';
+    const suffix = (h < 12) ? 'A.M' : 'P.M';
     return [hour, suffix];
 }
 

@@ -17,11 +17,11 @@ const HOURS = [
 
 // if ('wakeLock' in navigator) {alert("yes")}
 
-async function acquireLock() {
-    await navigator.wakeLock.request("screen");
-}
+// async function acquireLock() {
+//     await navigator.wakeLock.request("screen");
+// }
 
-alert("test");
+// alert("test");
 
 const timeNowHours = new Date().getHours();
 const timeNowMinutes = new Date().getMinutes();
@@ -30,7 +30,7 @@ const timeNowInHHMM = [timeNowHours,timeNowMinutes].join(':');
 function convertToAMPM(time) {
     const [h, m] = time.split(':').map(n => parseInt(n));
     const hour = HOURS[h % 12];
-    const suffix = (h < 12) ? 'am' : 'pm';
+    const suffix = (h < 12) ? 'AM' : 'PM';
     return [hour, suffix];
 }
 
@@ -44,4 +44,8 @@ const speech = new SpeechSynthesisUtterance(
 
 setInterval(() => {
     speechSynthesis.speak(speech);
+}, 60000);
+
+setInterval(() => {
+    console.log("running");
 }, 5000);

@@ -21,6 +21,8 @@ async function acquireLock() {
     await navigator.wakeLock.request("screen");
 }
 
+alert("test");
+
 const timeNowHours = new Date().getHours();
 const timeNowMinutes = new Date().getMinutes();
 const timeNowInHHMM = [timeNowHours,timeNowMinutes].join(':');

@@ -17,13 +17,28 @@ const HOURS = [
 
 // if ('wakeLock' in navigator) {alert("yes")}
 
-async function acquireLock() {
-    await navigator.wakeLock.request("screen");
-}
+// async function acquireLock() {
+//     await navigator.wakeLock.request("screen");
+// }
 
-acquireLock();
+// acquireLock();
 
 // alert("test");
+
+const requestWakeLock = async () => {
+    let wakeLock = null;
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', () => {
+            console.log('Wake Lock was released');
+        });
+        console.log('Wake Lock is active');
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+};
+
+requestWakeLock();
 
 
 
@@ -47,6 +62,7 @@ setInterval(() => {
     );
 
     speechSynthesis.speak(speech);
+    // requestWakeLock();
 }, 60000);
 
 setInterval(() => {

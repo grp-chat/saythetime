@@ -17,9 +17,9 @@ const HOURS = [
 
 // if ('wakeLock' in navigator) {alert("yes")}
 
-// async function acquireLock() {
-//     await navigator.wakeLock.request("screen");
-// }
+async function acquireLock() {
+    await navigator.wakeLock.request("screen");
+}
 
 // alert("test");
 

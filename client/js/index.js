@@ -21,6 +21,8 @@ async function acquireLock() {
     await navigator.wakeLock.request("screen");
 }
 
+acquireLock();
+
 // alert("test");
 
 

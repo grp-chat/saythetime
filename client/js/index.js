@@ -46,7 +46,7 @@ const HOURS = [
 function convertToAMPM(time) {
     const [h, m] = time.split(':').map(n => parseInt(n));
     const hour = HOURS[h % 12];
-    const suffix = (h < 12) ? 'ayy,m' : 'P...M';
+    const suffix = (h < 12) ? 'ayy,m' : 'P.M';
     return [hour, suffix];
 }
 

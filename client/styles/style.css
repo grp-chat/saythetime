@@ -9,8 +9,26 @@ body{
     color: white;
     font-weight: bold;
     position: absolute;
+    
+    width: 100vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 70px;
+    font-size: 23px;
+    text-align: center;
+    
+}
+
+.time {
+    font-size: 3em;
+}
+
+.date {
+    margin-top: 12px;
+    font-size: 1.75em;
+}
+
+.button {
+    width: 200px;
+    height: 100px;
 }
